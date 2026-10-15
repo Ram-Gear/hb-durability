@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>HB Durability HP – Guide</title><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="icon.svg"><link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="stylesheet" href="style.css"></head><body>
-<header class="site-header"><div class="brand"><img class="app-icon" src="icon.png" width="46" height="46" alt=""><div><div class="company">Ram-Gear Manufacturing Inc.</div><h1>HB Durability HP <span class="sub">Guide</span></h1></div></div><nav><a class="btn btn-ghost" href="index.html">Back to app</a></nav></header>
+<header class="site-header"><div class="brand"><img class="app-icon" src="icon.png" width="46" height="46" alt=""><div><div class="company">Ram-Gear Manufacturing Inc.</div><h1>HB Durability HP <span class="sub">Guide</span></h1></div></div><nav><a class="btn btn-ghost" href="#glossary">Glossary</a> <a class="btn btn-ghost" href="index.html">Back to app</a></nav></header>
 <main class="help-main">
 <div class="card"><h2>What it does</h2><p>Rates the surface durability (pitting) horsepower of a first-reduction stub tooth herringbone gearset on standard or extended centers per AGMA 211.02A (Aug. 1966), at six standard pinion/gear BHN combinations (295/255 … 390/350).</p>
 <ul><li><b>C1</b> = RPM × PDPE² × Cv / 126000, with PDPE = ODP − 2×(0.8/DPT) and Cv = 78/(78+√v), v = π·RPM·PDPE/12</li>
@@ -11,5 +11,59 @@
 <div class="practice"><b>2. Service factor.</b> Electric motor, moderate shock, 24 hrs/day → click 1.50 in the table. What is the service HP at 390/350? (≈ 216.38) <a href="https://grok.com/?q=How%20do%20I%20choose%20a%20gear%20service%20factor%20for%20load%20character%20and%20hours%20per%20day%3F" target="_blank" rel="noopener">Ask Grok</a></div>
 <div class="practice"><b>3. Extended centers.</b> Change CE from 39 to 39.25. Watch RC, PATE, contact length and Pac change. <a href="https://grok.com/?q=How%20does%20running%20herringbone%20gears%20on%20extended%20centers%20affect%20operating%20pressure%20angle%20and%20durability%20rating%3F" target="_blank" rel="noopener">Ask Grok</a></div>
 <div class="practice"><b>4. Face width.</b> Raise FW from 6 to 8 and see C2 rise. <a href="https://grok.com/?q=What%20is%20the%20face%20width%20factor%20in%20AGMA%20211.02A%20durability%20horsepower%3F" target="_blank" rel="noopener">Ask Grok</a></div></div>
+<div class="card" id="glossary"><h2>Glossary</h2><p class="small muted">Abbreviations used in the app's inputs, results and this guide. Lengths are in inches unless noted; angles in degrees.</p>
+<h3>Inputs</h3><dl class="gloss">
+<dt>INPUT RPM / RPM</dt><dd>Revolutions per minute of the pinion (input shaft). Enter the pinion speed, rev/min.</dd>
+<dt>FW</dt><dd>Face width: the axial width of the gear teeth in contact (total across both helices of the herringbone), in.</dd>
+<dt>DPT</dt><dd>Diametral pitch, transverse: teeth per inch of pitch diameter, measured in the plane of rotation, 1/in.</dd>
+<dt>NP / NG</dt><dd>Number of teeth on the pinion / on the gear.</dd>
+<dt>ODP / ODG</dt><dd>Outside diameter of the pinion / of the gear, in.</dd>
+<dt>CE</dt><dd>Center distance, extended (operating): the actual center distance the set runs on, in. Equal to C on standard centers.</dd>
+<dt>PAT</dt><dd>Pressure angle, transverse: the cutting (generating) pressure angle in the plane of rotation, °.</dd>
+<dt>HA</dt><dd>Helix angle of the teeth, °. 0 gives spur-gear geometry.</dd>
+<dt>SF</dt><dd>Service factor: a divisor (from the tables, by prime mover, load character and hours/day) that reduces the calculated rating to a service rating. Dimensionless.</dd></dl>
+<h3>Results &amp; geometry</h3><dl class="gloss">
+<dt>OUTPUT RPM</dt><dd>Gear (output) speed = RPM / gear ratio, rev/min.</dd>
+<dt>GEAR RATIO</dt><dd>NG / NP.</dd>
+<dt>C</dt><dd>Standard center distance = (NP + NG) / (2·DPT), in.</dd>
+<dt>RC</dt><dd>Ratio of centers = CE / C. 1.000 means standard centers; above 1 means extended centers.</dd>
+<dt>DPN</dt><dd>Diametral pitch, normal = DPT / cos HA, 1/in.</dd>
+<dt>MN / MT</dt><dd>Module, normal / transverse = 25.4 / DPN and 25.4 / DPT, mm.</dd>
+<dt>PAN</dt><dd>Pressure angle, normal, °. The sheet computes atan(tan PAT × cos HA); the app keeps that formula.</dd>
+<dt>A</dt><dd>Addendum = 0.8 / DPT (stub tooth), in.</dd>
+<dt>PDPE</dt><dd>Pitch diameter of the pinion, as used here = ODP − 2·A, in.</dd>
+<dt>v</dt><dd>Pitch-line velocity = π·RPM·PDPE / 12, ft/min (fpm).</dd>
+<dt>Cv</dt><dd>Dynamic (velocity) factor = 78 / (78 + √v). Dimensionless.</dd>
+<dt>BDP / BDG</dt><dd>Base circle diameter of the pinion / gear = (N / DPT)·cos PAT, in.</dd>
+<dt>PATE</dt><dd>Pressure angle, transverse, at the extended (operating) center = acos(cos PAT / RC), °.</dd>
+<dt>SINPATE / COSPATE</dt><dd>Sine and cosine of PATE.</dd>
+<dt>TANHA / COSHA</dt><dd>Tangent and cosine of HA.</dd>
+<dt>ZP / ZG</dt><dd>Distance along the line of action from the pinion / gear base-circle tangent point to its outside diameter = √((OD/2)² − (BD/2)²), in.</dd>
+<dt>ZL</dt><dd>Length of the line of action between the two base-circle tangent points = CE × SINPATE, in.</dd>
+<dt>Z</dt><dd>Length of contact (line of action) = ZP + ZG − ZL, in.</dd>
+<dt>BPT</dt><dd>Base pitch, transverse = (π / DPT)·cos PAT, in.</dd>
+<dt>BPN</dt><dd>Base pitch, normal, in (sheet formula: π·cos PAT / DPT × sin PAN / sin PAT).</dd>
+<dt>Transverse contact ratio</dt><dd>Z / BPT: average number of teeth in contact in the plane of rotation.</dd>
+<dt>Overlap ratio</dt><dd>Face (axial) contact ratio = FW·tan HA·DPT / (2π), as in the sheet. Total contact ratio is the sum shown in the sheet.</dd>
+<dt>K</dt><dd>Geometry factor for surface durability = (COSPATE·SINPATE/2)·(ratio/(ratio+1))·(0.95·Z / BPN). Dimensionless.</dd>
+<dt>C1</dt><dd>Speed/size factor = RPM·PDPE²·Cv / 126000.</dd>
+<dt>C2</dt><dd>Face-width factor = −0.0153·FW² + 0.7969·FW − 0.0193.</dd>
+<dt>C3</dt><dd>Material factor = K × (Sac/Cp)².</dd>
+<dt>C4</dt><dd>Fixed at 1.0 in the sheet.</dd>
+<dt>BHN, BHN-P / BHN-G</dt><dd>Brinell hardness number of the pinion / gear. The app rates six standard pairs; only the gear BHN enters the formula (as in the sheet).</dd>
+<dt>Sac</dt><dd>Allowable contact stress = 25600 + 345·BHN<sub>G</sub>, psi.</dd>
+<dt>Cp</dt><dd>Elastic coefficient (AGMA), √psi. Fixed at 2300 for a steel pinion on a steel gear; not a user input.</dd>
+<dt>Pac</dt><dd>Allowable (calculated) durability horsepower = C1×C2×C3×C4, HP.</dd>
+<dt>HP / SERVICE HP</dt><dd>Horsepower. Service HP = Pac / SF, the rating to compare against the actual load.</dd></dl>
+<h3>Related terms in other Ram-Gear/Blake programs</h3><p class="small">Not used in this app. From R.C. Blake Company, <i>Explanation of the Farrel Formula</i> (Farrel manual #610A, pp. 45–46).</p><dl class="gloss">
+<dt>PDE (PDPE, PDGE)</dt><dd>Pitch diameter at the extended (operating) center, pinion and gear. For a single gear PDE = PD.</dd>
+<dt>CTTT / CTTN</dt><dd>Circular tooth thickness, transverse / normal, at PDE. CTTT @ PDE = PDE·((π/2 + 2·TANPAT·DPT·X)/N + INVPAT − INVPATE).</dd>
+<dt>CPT / CPN</dt><dd>Circular pitch, transverse / normal, at PDE. CPT = CTTTP + CTTTG + BLCT (with BL = 0, just the sum of the two tooth thicknesses); CPN = CTTNP + CTTNG + BLCN.</dd>
+<dt>BL, BLCT, BLCN</dt><dd>Backlash; circular backlash transverse; circular backlash normal (taken as feeler-gauge backlash). Set backlash isn't always split equally between gear and pinion.</dd>
+<dt>INV (INVPAT, INVPATE)</dt><dd>Involute function of the pressure angle (inv φ = tan φ − φ, radians) at PAT and at PATE. For a single gear INVPAT = INVPATE.</dd>
+<dt>CR, CRP / CRG</dt><dd>Comparator reading, for the pinion / gear. Oilfield herringbone drawings usually list only CRP, ODP, CRG, ODG, PAT, HA and CE.</dd>
+<dt>B&amp;S</dt><dd>Chordal tooth dimensions (programs like “B&amp;S to Span &amp; CR” convert chordal dimensions to span and comparator readings).</dd>
+<dt>MOB</dt><dd>Measurement over balls, converted by the “MOB to CR…” programs to comparator readings, chordal and span dimensions.</dd>
+<dt>CA, CT</dt><dd>Not defined in this reference; see the program that uses them.</dd></dl></div>
 <div class="card small muted">Notes: the "ACTUAL BHN's" column in the original sheet (401 … 255) is reference data only and not used in any formula. Cp is fixed at 2300 (steel/steel).</div>
 </main><footer>Original app by Roger Blake (Herringbone Gear Tech Services) · Browser version by Ram-Gear Manufacturing Inc.</footer></body></html>
