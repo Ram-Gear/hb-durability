@@ -1,7 +1,7 @@
 :root{--card:#fff;--ink:#1d2329;--muted:#5d6873;--line:#d6dbe0;--accent:#9b1c1c;--accent2:#24527a}
 *{box-sizing:border-box}
 body{margin:0;font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#EAF7EA}
-.site-header{background:#22272e;color:#fff;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.site-header{background:#256b3a;color:#fff;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px}.app-icon{border-radius:8px;background:#3a4350}
 .company{font-size:12px;opacity:.75;letter-spacing:.06em;text-transform:uppercase}
 .site-header h1{margin:0;font-size:20px}.sub{font-weight:400;font-size:14px;opacity:.85;margin-left:8px}
