@@ -6,6 +6,7 @@
 <li><b>C2</b> = −0.0153·FW² + 0.7969·FW − 0.0193 (face-width factor)</li>
 <li><b>C3</b> = K × (Sac/Cp)², with (Sac/Cp)² = ((25600 + 345·BHN<sub>G</sub>)/2300)² and K the geometry factor from operating pressure angle, ratio, contact length Z and base pitch</li>
 <li><b>C4</b> = 1.0 &nbsp; · &nbsp; <b>Pac</b> = C1×C2×C3×C4 &nbsp; · &nbsp; <b>Service HP</b> = Pac / SF</li></ul></div>
+<div class="card" id="video"><h2>Watch how it works</h2><video controls preload="metadata" width="100%" src="hb-durability-help.mp4"></video><p class="small muted">About 95 s, using the spreadsheet example. <a href="storyboard.md">Storyboard</a></p></div>
 <div class="card"><h2>Practice</h2>
 <div class="practice"><b>1. Spreadsheet example.</b> 83 RPM, FW 6, DPT 2, 24/132 teeth, ODs 13/67, CE 39, PAT 25°, HA 0, SF 1.5. Check: Pac at 295/255 BHN ≈ 195.48 HP, service HP ≈ 130.32. <a href="https://grok.com/?q=In%20AGMA%20211.02A%20durability%20rating%2C%20why%20is%20service%20horsepower%20Pac%20divided%20by%20the%20service%20factor%3F" target="_blank" rel="noopener">Ask Grok</a></div>
 <div class="practice"><b>2. Service factor.</b> Electric motor, moderate shock, 24 hrs/day → click 1.50 in the table. What is the service HP at 390/350? (≈ 216.38) <a href="https://grok.com/?q=How%20do%20I%20choose%20a%20gear%20service%20factor%20for%20load%20character%20and%20hours%20per%20day%3F" target="_blank" rel="noopener">Ask Grok</a></div>
@@ -55,9 +56,9 @@
 <dt>Cp</dt><dd>Elastic coefficient (AGMA), √psi. Fixed at 2300 for a steel pinion on a steel gear; not a user input.</dd>
 <dt>Pac</dt><dd>Allowable (calculated) durability horsepower = C1×C2×C3×C4, HP.</dd>
 <dt>HP / SERVICE HP</dt><dd>Horsepower. Service HP = Pac / SF, the rating to compare against the actual load.</dd></dl>
-<h3>Related terms in other Ram-Gear/Blake programs</h3><p class="small">Not used in this app. From R.C. Blake Company, <i>Explanation of the Farrel Formula</i> (Farrel manual #610A, pp. 45–46).</p><dl class="gloss">
+<h3>Related terms in other Ram-Gear/Blake programs</h3><p class="small">Not used in this app. From R.C. Blake Company, <i>Explanation of the Farrel Formula</i> (Farrel manual #610A, pp. 45–46), and <i>Using the Farrel Formula to Convert Comparator Readings to CTTT @ PDE &amp; CTTT @ PD</i>.</p><dl class="gloss">
 <dt>PDE (PDPE, PDGE)</dt><dd>Pitch diameter at the extended (operating) center, pinion and gear. For a single gear PDE = PD.</dd>
-<dt>CTTT / CTTN</dt><dd>Circular tooth thickness, transverse / normal, at PDE. CTTT @ PDE = PDE·((π/2 + 2·TANPAT·DPT·X)/N + INVPAT − INVPATE).</dd>
+<dt>CTTT / CTTN</dt><dd>Circular tooth thickness, transverse / normal, at PDE, in. CTTT @ PDE = PDE·((π/2 + 2·TANPAT·DPT·X)/N + INVPAT − INVPATE). In Farrel's printed form, tte = De[(1.5708 + 0.72794·X·Pd)/N + 0.014904 − Be], where 1.5708 = π/2, 0.72794 = 2·tan PAT and 0.014904 = INVPAT (both for PAT = 20°), De = PDE, Pd = DPT, N = NP or NG, and Be = INVPATE. For a single gear, CTTT @ PD = PD·(CTTT @ PDE / PDE − INVPAT + INVPATE).</dd><dt>X</dt><dd>Comparator offset in the CTTT formula: X = ((OD − PD)/2) − AB − CR, in, where OD is ODP or ODG, PD is PDP or PDG, AB is the addendum of the comparator block (0.8/DPT for stub-tooth herringbone sets) and CR is the comparator reading (CRP or CRG). Example from the Farrel CR sheet: ODP 14.16, PDP 13.2, AB 0.32, CRP −0.004 gives XP = 0.164 in.</dd>
 <dt>CPT / CPN</dt><dd>Circular pitch, transverse / normal, at PDE. CPT = CTTTP + CTTTG + BLCT (with BL = 0, just the sum of the two tooth thicknesses); CPN = CTTNP + CTTNG + BLCN.</dd>
 <dt>BL, BLCT, BLCN</dt><dd>Backlash; circular backlash transverse; circular backlash normal (taken as feeler-gauge backlash). Set backlash isn't always split equally between gear and pinion.</dd>
 <dt>INV (INVPAT, INVPATE)</dt><dd>Involute function of the pressure angle (inv φ = tan φ − φ, radians) at PAT and at PATE. For a single gear INVPAT = INVPATE.</dd>
