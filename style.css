@@ -10,7 +10,7 @@ body{margin:0;font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans
 .layout{max-width:1200px;margin:0 auto;padding:18px 22px 40px;display:grid;grid-template-columns:minmax(260px,330px) 1fr;gap:16px}
 @media(max-width:800px){.layout{grid-template-columns:1fr}}
 .card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin-bottom:16px}
-.card.out-card{border-top:5px solid #2E7386;border-radius:6px}
+.card,.card.out-card{border-top:5px solid #2E7386;border-radius:6px}
 .card h2{margin:0 0 8px;font-size:18px}
 .field{display:grid;grid-template-columns:90px 1fr;gap:4px 10px;align-items:center;margin-bottom:6px}
 .field label{font-weight:600}.field .hint{grid-column:2;font-size:12px;color:var(--muted)}
