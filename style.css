@@ -1,0 +1,24 @@
+:root{--card:#fff;--ink:#1d2329;--muted:#5d6873;--line:#d6dbe0;--accent:#9b1c1c;--accent2:#24527a}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#EAF7EA}
+.site-header{background:#22272e;color:#fff;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}.app-icon{border-radius:8px;background:#3a4350}
+.company{font-size:12px;opacity:.75;letter-spacing:.06em;text-transform:uppercase}
+.site-header h1{margin:0;font-size:20px}.sub{font-weight:400;font-size:14px;opacity:.85;margin-left:8px}
+.btn{display:inline-block;font:inherit;padding:7px 14px;border-radius:5px;border:1px solid #9aa5b1;background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}
+.btn-ghost{background:transparent;color:#fff;border-color:#8a96a3}
+.layout{max-width:1200px;margin:0 auto;padding:18px 22px 40px;display:grid;grid-template-columns:minmax(260px,330px) 1fr;gap:16px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin-bottom:16px}
+.card.out-card{border-top:5px solid #2E7386;border-radius:6px}
+.card h2{margin:0 0 8px;font-size:18px}
+.field{display:grid;grid-template-columns:90px 1fr;gap:4px 10px;align-items:center;margin-bottom:6px}
+.field label{font-weight:600}.field .hint{grid-column:2;font-size:12px;color:var(--muted)}
+input,select{font:inherit;padding:5px 8px;border:1px solid #b9c1c9;border-radius:5px;width:100%}
+table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid var(--line);padding:5px 8px;text-align:right;font-variant-numeric:tabular-nums}
+th{font-size:12.5px;color:var(--muted);background:#fafbfc}td:first-child,th:first-child{text-align:left}
+.big td{font-weight:700;color:var(--accent)}.muted{color:var(--muted)}.small{font-size:12.5px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:10px 0 30px}
+.practice{border-left:4px solid var(--accent2);background:#f4f8fc;padding:10px 14px;margin:12px 0;border-radius:4px}
+.help-main{max-width:900px;margin:0 auto;padding:18px 22px}
